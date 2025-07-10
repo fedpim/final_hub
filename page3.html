@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12 наших сайтов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .category-btn.active {
+        background-color: #3b82f6;
+        color: white;
+      }
+      #backToTop {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      #backToTop.visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header
+      class="bg-gradient-to-r from-red-600 to-green-700 text-white shadow-lg"
+    >
+      <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">
+              12 наших проектов
+            </h1>
+            <p class="text-blue-100">Лучшее за 3 недели работы</p>
+          </div>
+          <!-- <div class="flex items-center space-x-4">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Поиск сайтов..."
+                class="py-2 px-4 pr-10 rounded-full bg-blue-500 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 w-64"
+              />
+              <i class="fas fa-search absolute right-3 top-3 text-blue-200"></i>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Categories -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">Категории</h2>
+        <div class="flex flex-wrap gap-2">
+          <button
+            class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-100 transition active"
+            data-category="all"
+          >
+            Все
+          </button>
+          <button
+            class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-100 transition"
+            data-category="learning"
+          >
+            Познавательное
+          </button>
+          <!-- <button
+            class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-100 transition"
+            data-category="productivity"
+          >
+            Продуктивность
+          </button> -->
+          <!-- <button
+            class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-100 transition"
+            data-category="tools"
+          >
+            Инструменты
+          </button> -->
+          <button
+            class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-100 transition"
+            data-category="entertainment"
+          >
+            Развлечения
+          </button>
+
+          <button
+            class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-100 transition"
+            data-category="animals"
+          >
+            Животные
+          </button>
+        </div>
+      </div>
+
+      <!-- Websites Grid -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        id="websites-container"
+      >
+        <!-- Website cards will be inserted here by JavaScript -->
+      </div>
+
+      <!-- Newsletter -->
+      <!-- <div
+        class="mt-12 bg-white rounded-xl shadow-md overflow-hidden p-6 md:p-8"
+      >
+        <div class="md:flex">
+          <div
+            class="md:flex-shrink-0 md:w-1/3 flex items-center justify-center mb-6 md:mb-0"
+          >
+            <i class="fas fa-envelope-open-text text-6xl text-blue-500"></i>
+          </div>
+          <div class="md:ml-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Получайте новые полезные сайты
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Подпишитесь на нашу рассылку и получайте еженедельную подборку
+              интересных и полезных ресурсов прямо на почту.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                placeholder="Ваш email"
+                class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              >
+                Подписаться
+              </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-2">
+              Мы не спамим. Отписаться можно в любой момент.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <!-- <div class="container mx-auto px-4"> -->
+      <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">15 полезных сайтов</h3>
+            <p class="text-gray-400">
+              Коллекция лучших онлайн-ресурсов для работы, обучения и
+              развлечений.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Категории</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Обучение</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Продуктивность</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Инструменты</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Развлечения</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Полезные ссылки</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >О проекте</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Контакты</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Политика конфиденциальности</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Социальные сети</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-telegram text-xl"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-vk text-xl"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-youtube text-xl"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-twitter text-xl"></i
+              ></a>
+            </div>
+          </div>
+        </div> -->
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+        <p>&copy; 2025, 2 смена. 12 лучших сайтов. Все права...</p>
+      </div>
+      <!-- </div> -->
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Websites data
+      const websites = [
+        {
+          id: 1,
+          title: 'Оригами',
+          description:
+            'Постигни искусство оригами от новичка до профессионала!',
+          url: 'https://abdulbek3000.github.io/Origami/',
+          category: 'learning',
+          icon: 'fas fa-paper-plane',
+          color: 'bg-purple-100 text-purple-800',
+        },
+        {
+          id: 2,
+          title: 'Теннис',
+          description: 'Хотите познакомится с теннисом - Вам сюда.',
+          url: 'https://sofochka7779.github.io/project_sofa/',
+          category: 'learning',
+          icon: 'fas fa-table-tennis',
+          color: 'bg-gray-100 text-gray-800',
+        },
+        {
+          id: 3,
+          title: 'Барни',
+          description: 'Прекраснейший пёс руководителя команды',
+          url: 'https://rionicrk.github.io/newProject_KatyaPolini/',
+          category: 'animals',
+          icon: 'fas fa-dog',
+          color: 'bg-blue-100 text-blue-800',
+        },
+        {
+          id: 4,
+          title: 'Страны Европы',
+          description: 'Сводки статистики главных европейских стран',
+          url: 'http://94.19.74.216:4000/andrew/index.html',
+          category: 'learning',
+          icon: 'fas fa-flag',
+          color: 'bg-green-100 text-green-800',
+        },
+        {
+          id: 5,
+          title: 'Мурчалки',
+          description: 'Домашние любимцы Марии',
+          url: 'https://masichek123.github.io/projectmasha/',
+          category: 'animals',
+          icon: 'fas fa-cat',
+          color: 'bg-blue-100 text-blue-800',
+        },
+        {
+          id: 6,
+          title: 'Surf Guide',
+          description: 'Познакомься с миром сёрфинга!',
+          url: 'https://rem6967.github.io/projcect-Rem/',
+          category: 'learning',
+          icon: 'fas fa-earth-oceania',
+          color: 'bg-indigo-100 text-indigo-800',
+        },
+        {
+          id: 7,
+          title: 'Популярные питомцы',
+          description: 'Братья наши меньшие. Хвостатые, пушистые, крылатые.',
+          url: 'https://aksinia07.github.io/PROJECT_PVA/',
+          category: 'learning',
+          icon: 'fas fa-paw',
+          color: 'bg-yellow-100 text-yellow-800',
+        },
+        {
+          id: 8,
+          title: 'Brawl Stars',
+          description: 'Во что играют миллионы?',
+          url: 'https://banan92.github.io/project_brawl/',
+          category: 'entertainment',
+          icon: 'fas fa-gamepad',
+          color: 'bg-green-100 text-green-800',
+        },
+        {
+          id: 9,
+          title: 'Celebrity',
+          description: 'Самое важное и выдающееся о мировых знаменитостях',
+          url: 'http://94.19.74.216:4000/yarik.html',
+          category: 'entertainment',
+          icon: 'fas fa-star',
+          color: 'bg-green-100 text-green-800',
+        },
+        {
+          id: 10,
+          title: 'Бассенджи Ева',
+          description: 'Немного милоты о бесценной собаке Киры',
+          url: 'http://94.19.74.216:4000/kira/index.html',
+          category: 'animals',
+          icon: 'fas fa-dog',
+          color: 'bg-gray-100 text-gray-800',
+        },
+        {
+          id: 11,
+          title: 'Бигли',
+          description: 'О породе от истинного ценителя и специлиста.',
+          url: 'https://timosha-bro.github.io/project-timuyr/',
+          category: 'animals',
+          icon: 'fas fa-dog',
+          color: 'bg-blue-100 text-blue-800',
+        },
+        {
+          id: 12,
+          title: 'Marksfilms',
+          description: 'Лучший онлайн-кинотеатр',
+          url: 'http://94.19.74.216:4000/',
+          category: 'entertainment',
+          icon: 'fas fa-film',
+          color: 'bg-red-100 text-red-800',
+        },
+
+        // {
+        //   id: 1,
+        //   title: 'Coursera',
+        //   description: 'Онлайн-курсы от ведущих университетов и компаний мира.',
+        //   url: 'https://www.coursera.org',
+        //   category: 'learning',
+        //   icon: 'fas fa-graduation-cap',
+        //   color: 'bg-purple-100 text-purple-800',
+        // },
+        // {
+        //   id: 2,
+        //   title: 'Notion',
+        //   description:
+        //     'Мощный инструмент для организации работы и личных проектов.',
+        //   url: 'https://www.notion.so',
+        //   category: 'productivity',
+        //   icon: 'fas fa-tasks',
+        //   color: 'bg-gray-100 text-gray-800',
+        // },
+        // {
+        //   id: 3,
+        //   title: 'Canva',
+        //   description:
+        //     'Создавайте профессиональный дизайн без специальных навыков.',
+        //   url: 'https://www.canva.com',
+        //   category: 'tools',
+        //   icon: 'fas fa-palette',
+        //   color: 'bg-blue-100 text-blue-800',
+        // },
+        // {
+        //   id: 4,
+        //   title: 'Duolingo',
+        //   description:
+        //     'Бесплатное приложение для изучения языков в игровой форме.',
+        //   url: 'https://www.duolingo.com',
+        //   category: 'learning',
+        //   icon: 'fas fa-language',
+        //   color: 'bg-green-100 text-green-800',
+        // },
+        // {
+        //   id: 5,
+        //   title: 'Trello',
+        //   description:
+        //     'Визуальное управление проектами с помощью досок и карточек.',
+        //   url: 'https://trello.com',
+        //   category: 'productivity',
+        //   icon: 'fas fa-columns',
+        //   color: 'bg-blue-100 text-blue-800',
+        // },
+        // {
+        //   id: 6,
+        //   title: 'Grammarly',
+        //   description:
+        //     'Проверка грамматики и стиля письма на английском языке.',
+        //   url: 'https://www.grammarly.com',
+        //   category: 'tools',
+        //   icon: 'fas fa-spell-check',
+        //   color: 'bg-indigo-100 text-indigo-800',
+        // },
+        // {
+        //   id: 7,
+        //   title: 'Khan Academy',
+        //   description:
+        //     'Бесплатное образование мирового уровня для всех и каждого.',
+        //   url: 'https://www.khanacademy.org',
+        //   category: 'learning',
+        //   icon: 'fas fa-book-open',
+        //   color: 'bg-yellow-100 text-yellow-800',
+        // },
+        // {
+        //   id: 8,
+        //   title: 'Spotify',
+        //   description: 'Стриминговый сервис с миллионами песен и подкастов.',
+        //   url: 'https://www.spotify.com',
+        //   category: 'entertainment',
+        //   icon: 'fas fa-music',
+        //   color: 'bg-green-100 text-green-800',
+        // },
+        // {
+        //   id: 9,
+        //   title: 'Evernote',
+        //   description:
+        //     'Записывайте идеи и организуйте свою жизнь в одном месте.',
+        //   url: 'https://evernote.com',
+        //   category: 'productivity',
+        //   icon: 'fas fa-sticky-note',
+        //   color: 'bg-green-100 text-green-800',
+        // },
+        // {
+        //   id: 10,
+        //   title: 'Unsplash',
+        //   description:
+        //     'Бесплатные высококачественные фотографии для любых целей.',
+        //   url: 'https://unsplash.com',
+        //   category: 'tools',
+        //   icon: 'fas fa-camera',
+        //   color: 'bg-gray-100 text-gray-800',
+        // },
+        // {
+        //   id: 11,
+        //   title: 'edX',
+        //   description: 'Онлайн-курсы от Гарварда, MIT и других ведущих вузов.',
+        //   url: 'https://www.edx.org',
+        //   category: 'learning',
+        //   icon: 'fas fa-university',
+        //   color: 'bg-blue-100 text-blue-800',
+        // },
+        // {
+        //   id: 12,
+        //   title: 'Pocket',
+        //   description:
+        //     'Сохраняйте статьи, видео и многое другое для чтения позже.',
+        //   url: 'https://getpocket.com',
+        //   category: 'productivity',
+        //   icon: 'fas fa-bookmark',
+        //   color: 'bg-red-100 text-red-800',
+        // },
+        // {
+        //   id: 13,
+        //   title: 'Figma',
+        //   description:
+        //     'Инструмент для дизайна интерфейсов с возможностью совместной работы.',
+        //   url: 'https://www.figma.com',
+        //   category: 'tools',
+        //   icon: 'fas fa-paint-brush',
+        //   color: 'bg-purple-100 text-purple-800',
+        // },
+        // {
+        //   id: 14,
+        //   title: 'TED',
+        //   description: 'Вдохновляющие выступления на самые разные темы.',
+        //   url: 'https://www.ted.com',
+        //   category: 'learning',
+        //   icon: 'fas fa-comment',
+        //   color: 'bg-red-100 text-red-800',
+        // },
+        // {
+        //   id: 15,
+        //   title: 'Netflix',
+        //   description: 'Популярный стриминговый сервис с фильмами и сериалами.',
+        //   url: 'https://www.netflix.com',
+        //   category: 'entertainment',
+        //   icon: 'fas fa-film',
+        //   color: 'bg-red-100 text-red-800',
+        // },
+      ];
+
+      // Render websites
+      function renderWebsites(category = 'all') {
+        const container = document.getElementById('websites-container');
+        container.innerHTML = '';
+
+        const filteredWebsites =
+          category === 'all'
+            ? websites
+            : websites.filter((website) => website.category === category);
+
+        filteredWebsites.forEach((website) => {
+          const card = document.createElement('div');
+          card.className =
+            'card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl';
+          card.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="${
+                              website.color
+                            } rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="${website.icon} text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">${
+                              website.title
+                            }</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">${website.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                              website.category
+                            )}">
+                                ${getCategoryName(website.category)}
+                            </span>
+                            <a href="${
+                              website.url
+                            }" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                Посетить <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+          container.appendChild(card);
+        });
+      }
+
+      // Helper functions
+      function getCategoryName(category) {
+        const names = {
+          learning: 'Познавательное',
+          productivity: 'Продуктивность',
+          tools: 'Инструменты',
+          entertainment: 'Развлечения',
+          animals: 'Животные',
+        };
+        return names[category] || category;
+      }
+
+      function getCategoryColor(category) {
+        const colors = {
+          learning: 'bg-blue-100 text-blue-800',
+          productivity: 'bg-green-100 text-green-800',
+          tools: 'bg-yellow-100 text-yellow-800',
+          entertainment: 'bg-purple-100 text-purple-800',
+        };
+        return colors[category] || 'bg-gray-100 text-gray-800';
+      }
+
+      // Category filter
+      document.querySelectorAll('.category-btn').forEach((btn) => {
+        btn.addEventListener('click', function () {
+          document
+            .querySelectorAll('.category-btn')
+            .forEach((b) => b.classList.remove('active'));
+          this.classList.add('active');
+          const category = this.dataset.category;
+          renderWebsites(category);
+        });
+      });
+
+      // Back to top button
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Initial render
+      document.addEventListener('DOMContentLoaded', function () {
+        renderWebsites();
+      });
+    </script>
+  </body>
+</html>
